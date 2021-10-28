@@ -1,0 +1,279 @@
+@import "vars-and-funcntion";
+@import "left-side";
+@import "videos";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+i {
+  cursor: pointer;
+  font-size: 1.2em;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: $font-color;
+}
+input,
+button:focus {
+  outline: none;
+  border: none;
+}
+body {
+  background-color: $body-color;
+}
+//start header
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: $font-color;
+  background-color: $secondry-color;
+  width: 100%;
+  padding: 0.5em 1.5em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  .logo-side {
+    @extend %display-flex;
+    width: 12%;
+    #showList {
+      margin-right: 1em;
+      display: none;
+    }
+    #hideList {
+      margin-right: 1em;
+    }
+    #logo {
+      color: $green-color;
+      font-size: 2.5em;
+    }
+    h3 {
+      @extend %standard-font;
+    }
+  }
+  .search-bar {
+    .S-B {
+      width: 50%;
+    }
+    width: 70%;
+    @extend %display-flex;
+    justify-content: center;
+    input {
+      width: 100%;
+      height: 2.5em;
+      background-color: $body-color;
+      border: 1px solid $secondry-color;
+      position: relative;
+      padding: 0 1em;
+    }
+    .fa-search {
+      width: 4em;
+      height: 1.6em;
+      background-color: $green-color;
+      color: #f2ecff;
+      text-align: center;
+      padding: 0.3em 0;
+      margin-right: 2em;
+      border-radius: 0 5px 5px 0;
+      &:hover {
+        background-color: $font-color;
+        color: $body-color;
+      }
+    }
+    .fa-microphone {
+      background-color: $body-color;
+      color: $font-color;
+      width: 2em;
+      height: 2em;
+      text-align: center;
+      padding: 0.5em 0;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      &:hover {
+        background-color: $green-color;
+        color: $body-color;
+      }
+    }
+  }
+  .user-side {
+    @extend %display-flex;
+    width: 15%;
+    justify-content: flex-end;
+    i {
+      padding: 0 1em;
+    }
+  }
+}
+// small screen
+@media screen and (max-width: 767px) {
+  header {
+    .logo-side {
+      width: auto;
+      #showList {
+        display: block;
+      }
+      #hideList {
+        display: none;
+      }
+      #logo {
+        font-size: 1.5em;
+        margin-right: 0.3em;
+      }
+      h3 {
+        font-size: 1em;
+      }
+      .fa-bars {
+        margin-right: 0.4em;
+      }
+    }
+    .search-bar {
+      width: auto;
+      .fa-search {
+        font-size: 1em;
+        width: 2em;
+        margin: 0;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+      }
+      .S-B {
+        display: none;
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        input {
+          width: 100%;
+        }
+      }
+      .fa-microphone {
+        display: none;
+      }
+    }
+    .user-side {
+      width: auto;
+      i {
+        padding: 0 0 0 1em;
+        font-size: 1em;
+      }
+    }
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 920px) {
+  header {
+    .logo-side {
+      width: auto;
+      #showList {
+        display: block;
+      }
+      #hideList {
+        display: none;
+      }
+      #logo {
+        margin-right: 0.2em;
+      }
+    }
+    .search-bar {
+      width: auto;
+    }
+    .user-side {
+      width: auto;
+      i {
+        padding: 0 0.5em;
+      }
+    }
+  }
+}
+//---------------------------------------------
+.titles {
+  width: 80%;
+  position: fixed;
+  right: -40%;
+  top: 5.6em;
+  transform: $transform;
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  -o-transform: $transform;
+  background-color: lighten($body-color, 10%);
+  padding: 0.5em;
+  box-shadow: 0 0px 1px grey inset;
+  overflow-x: scroll;
+  z-index: 5;
+  ul {
+    @extend %display-flex;
+    justify-content: flex-start;
+    @extend %standard-font;
+    text-transform: capitalize;
+    li {
+      margin: 0.5em;
+      padding: 0.5em 1em;
+      box-shadow: 0 0 1px gray inset;
+      border-radius: 30px;
+      -webkit-border-radius: 30px;
+      -moz-border-radius: 30px;
+      -ms-border-radius: 30px;
+      -o-border-radius: 30px;
+      background-color: $secondry-color;
+      cursor: pointer;
+      &:hover {
+        background-color: $green-color;
+      }
+    }
+    .active {
+      background-color: $font-color;
+      a {
+        color: $body-color;
+      }
+    }
+  }
+}
+
+.show {
+  display: block !important;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+@media screen and (max-width: 767px) {
+  .titles {
+    transform: none;
+    width: 100%;
+    left: 0;
+    top: 5.1%;
+    right: auto;
+    font-size: 0.8em;
+    ul {
+      li {
+        margin: 0.2em;
+      }
+    }
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 920px) {
+  .titles {
+    width: 100%;
+    left: 0;
+    top: 5.1%;
+    right: auto;
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+  }
+}

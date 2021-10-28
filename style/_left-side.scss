@@ -1,0 +1,61 @@
+.left-side {
+  width: 20%;
+  height: 92vh;
+  position: fixed;
+  top: 3.5em;
+  left: 0;
+  background-color: lighten($body-color, 10);
+  overflow-y: scroll;
+  font-family: $main-font;
+  hr {
+    background-color: #3a3a3a;
+    outline: none;
+    border: none;
+    height: 2px;
+  }
+  p {
+    font-size: 0.9em;
+    color: lighten($secondry-color, 30);
+    padding: 1em 5em 1em 0.5em;
+    text-align: center;
+    a {
+      margin: 0 0.5em 0 0;
+      color: $green-color;
+    }
+  }
+  ul {
+    margin: 0.3em;
+    color: $font-color;
+    font-size: 0.9em;
+    .active {
+      background-color: lighten($secondry-color, 10);
+    }
+    p {
+      padding: 1em 5em 1em 0;
+    }
+    li {
+      padding: 1em 0 1em 3em;
+      &:hover {
+        cursor: pointer;
+        background-color: lighten($secondry-color, 10);
+      }
+      i {
+        margin-right: 1em;
+        color: lighten($secondry-color, 30);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .left-side {
+    width: 0;
+    z-index: 99;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 920px) {
+  .left-side {
+    width: 0;
+    z-index: 99;
+  }
+}

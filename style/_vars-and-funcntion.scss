@@ -1,0 +1,47 @@
+// vars
+$body-color: #171717;
+$secondry-color: #414141;
+$font-color: #f2ecff;
+$green-color: #00c896;
+$transform: translate(-50%, -50%);
+
+// fotns
+$main-font: Roboto, Arial, sans-serif;
+
+//extend
+%standard-font {
+  font-family: $main-font;
+  font-weight: 500;
+}
+%display-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+%before-and-after-icons {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+}
+// scrollbar ------------
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+//-------------
